@@ -52,7 +52,7 @@ namespace WeekTwoCodeChallenge
 	{
 		 Console.WriteLine(Lower);
 	}
-                if (x || y != letterCounter.length)
+                if (x != letterCounter.length)
                 {
 	
 		 Console.WriteLine();
@@ -60,53 +60,41 @@ namespace WeekTwoCodeChallenge
             }
         }
 	
-             static void TextStats( string input)
-{
-            string text = "it looks pretty crappy outside"; 
-            /// declaring the text
-                for (int i = 0; i < text.Length; i = i +1){
-              ///
-                    char letter = text[i];
-                    if (letter == 'p')
-                    {
-                        Console.WriteLine("found a p");
-                    }
-                                   
-                
-                /// how to loop over each word in a string
-                
-                string text2 = "it looks pretty crappy outside";
-                List<string> wordList = text2.Split(' ').ToList();
-                for (int i = wordList.Count() - 1; i >= 0; i--)
-                {
-                        
-                    Console.WriteLine(wordList[i] + " ");
-                    
-                }
-                var longWord = "  ";
-                var shortWord = " ";
-                if (longWord == wordList[i])
-                {
-                    Console.WriteLine(longWord);
-                }
-                if (shorWord = wordlist[i])
-                {
-                    Console.WriteLine(shortWord);
-                }
-                
-            Console.ReadKey();
+             
         
-        
-     
+             
     }
 }
-			
+			  static void TextStats(string input)
+        {  
+            // standardized
+
+            input = input.ToLower();
+
+
+            // number ofletters
+            Console.WriteLine("Number of letters:" + input.Length);
+            // number of vowels
+            Console.WriteLine("number of vowels:" + input.Where( x => "aeiou".Contains(x)).Count());
+            //number of consanats
+            Console.WriteLine("Number of Cons.:" + input.Where( x => ! "aeiou".Contains(x)).Count());
+            // number special char
+            Console.WriteLine("Number of Special Char.:" + input.Where(x => ",. ?".Contains(x)).Count());
+            // number of words
+            Console.WriteLine("Number of words:" + input.Split(' ').Count));
+            // shortest word
+            Console.WriteLine("Shortest word:" + input.Split(" ").OrderBy(" ", ""));
+            // longest word
+            Console.WriteLine("Second longest word:" + input.Split(" ").OrderBy("",' '));
+            //second longest word
+            
+            Console.WriteLine("Longest word:" + input.Split(" ").OrderBy(" ", " "));
 			 
 			}
 	
 
 		 
-	}
+	
 			 
 			
        
